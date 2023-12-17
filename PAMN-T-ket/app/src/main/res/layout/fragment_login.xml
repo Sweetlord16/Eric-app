@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.login.LoginFragment">
+    <me.ibrahimsn.particle.ParticleView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:particleCount="60"
+        app:particleMinRadius="3"
+        app:particleMaxRadius="10"
+        app:particlesBackgroundColor="@color/background"
+        app:particleColor="@color/primary"
+        app:particleLineColor="@color/primary"
+        app:particleLinesEnabled="true" />
+
+    <ImageView
+        android:id="@+id/waves"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/top_waves"
+        android:scaleType="fitStart"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/Grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waves"
+        tools:ignore="MissingConstraints"
+        app:columnCount="1">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="70dp"
+            android:text="Introduzca su código"
+            android:textSize="30dp"
+            app:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/etlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_rounded"
+            android:ems="12"
+            android:hint="EVENT CODE"
+            android:textColorHint="#9B9B9B"
+            android:textColorHighlight="#9B9B9B"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="#9B9B9B"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:inputType="textPassword"
+            app:layout_gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonlogin"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:background="@drawable/button_rounded_blue"
+            android:text="Log In"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/TextToVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¡Su código es correcto!"
+            android:textAlignment="center"
+            android:textSize="25dp"
+
+            app:layout_gravity="center"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/TextToError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="125dp"
+            android:text="¡Su código es incorrecto!"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            app:layout_gravity="center"
+            android:visibility="invisible" />
+
+    </androidx.gridlayout.widget.GridLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomlayout"
+        android:src="@drawable/waves"
+        tools:ignore="MissingConstraints" />
+
+
+    <FrameLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

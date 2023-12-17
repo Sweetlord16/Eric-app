@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.TKet" parent="Theme.Material3.Light.NoActionBar">
+                <item name="android:statusBarColor">@color/statusBar</item>
+    </style>
+
+    <style name="Theme.TKet" parent="Base.Theme.TKet" />
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_splash</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.TKet</item>
+    </style>
+</resources>

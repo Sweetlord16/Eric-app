@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">T-ket</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="eventInfo">EventInfo</string>
+
+    <string name="qrWindow">QrWindow</string>
+
+    <string name="TicketList">TicketList</string>
+</resources>
