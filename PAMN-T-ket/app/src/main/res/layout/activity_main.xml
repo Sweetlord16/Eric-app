@@ -42,6 +42,40 @@
 
         />
 
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/qr_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="175dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/grupo_qr"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+
+    android:id="@+id/lantern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/linterna"
+        android:visibility="invisible"
+
+        app:layout_constraintBottom_toTopOf="@id/bottomNavView"
+        app:layout_constraintEnd_toEndOf="@id/qr_group"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+    </androidx.appcompat.widget.AppCompatImageView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="0dp"

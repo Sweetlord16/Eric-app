@@ -14,10 +14,9 @@ class UserRepositoryImpl : UserRepository {
     private val userRemote: UserRemote =  UserFirebaseImpl()
     private val eventInfo: EventRemote = EventFirebaseImpl()
     override suspend fun checkIsStaff(EventId: String, StaffCode: String): Boolean {
-        userRemote.isStaff(EventId, StaffCode)
         AppData.setEventCode(EventId)
         AppData.setEventInfo(eventInfo.getEventInfo())
-        return true
+        return userRemote.isStaff(EventId, StaffCode)
     }
 
     override fun setUser(id_event: String, staffCode: String) {

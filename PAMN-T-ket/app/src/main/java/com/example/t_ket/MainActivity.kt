@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
     private lateinit var connectivityObserver: ConnectivityObserver
     private lateinit var navController: NavController
+    lateinit var bind: ActivityMainBinding
     companion object {
         const val MY_CHANNEL_ID = "myChannel"
     }
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         createChannel()
         binding = ActivityMainBinding.inflate(layoutInflater)
+        bind = binding
         setContentView(binding.root)
         initUI()
         lifecycleScope.launch(Dispatchers.Main) {
@@ -152,6 +154,20 @@ class MainActivity : AppCompatActivity() {
                 with(binding) {
                     Log.d("TAG", "Koi no DIsco QUEEN")
                     bottomNavView.isVisible = true
+                }
+            }
+            if (destination.id == R.id.qrWindowFragment) {
+                // Acciones específicas cuando el destino es EventInfoFragment
+                with(binding) {
+                    Log.d("TAG", "Koi no DIsco QUEEN")
+                    qrGroup.isVisible = true
+                    lantern.isVisible = true
+                }
+            }else{
+                with(binding) {
+                    Log.d("TAG", "Koi no DIsco QUEEN")
+                    qrGroup.isVisible = false
+                    lantern.isVisible = false
                 }
             }
         }
