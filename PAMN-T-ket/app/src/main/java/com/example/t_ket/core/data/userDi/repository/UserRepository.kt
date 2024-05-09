@@ -6,4 +6,6 @@ interface UserRepository {
     fun setUser(id_event: String, staffCode:String)
 
     fun getIdEvent(): String
+
+    suspend fun isAdmin(id_event:String, staffCode:String): Boolean?
 }

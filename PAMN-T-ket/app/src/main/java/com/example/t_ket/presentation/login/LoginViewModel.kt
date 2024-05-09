@@ -20,10 +20,19 @@ class LoginViewModel @Inject constructor(
     val signUpState: LiveData<Boolean>
         get() = _signUpState
 
+    //Variable para ver si es admin
+    private val _singUpAdmin: MutableLiveData<Boolean> = MutableLiveData()
+    val signUpAdmin: LiveData<Boolean>
+        get() = _singUpAdmin
+
     fun signUp(code: String) {
         viewModelScope.launch {
             var result = loginUseCase.associateUser(code)
             _signUpState.value = result
+            var admin = loginUseCase.isAdmin(code)
+            _singUpAdmin.value = admin
+
+            Log.d("TAG" ,"Admin: $admin")
             Log.d("TAG" ,"Result: $result")
             Log.d("TAG" ,"Comms")
         }

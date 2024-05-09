@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.t_ket"
         minSdk = 29
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -55,6 +55,7 @@ android {
 
 dependencies {
     implementation("androidx.gridlayout:gridlayout:1.0.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     val appcompat_version = "1.6.1"
     val navVersion = "2.7.1"
     //dAGGER hILT

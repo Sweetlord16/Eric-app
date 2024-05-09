@@ -39,4 +39,41 @@ class UserFirebaseImpl(): UserRemote {
         Log.d("KKKKKKKKKK", "Usuario no encontrado")
         return false
     }
+    override suspend fun isAdmin(EventId: String, StaffCode: String): Boolean? {
+        try {
+            val documentSnapshot = firestore.collection("Users").document("Users").get().await()
+
+            if (documentSnapshot.exists()) {
+
+                val userData = documentSnapshot.data
+                if (userData != null) {
+                    val usersMap = userData["Users"] as? Map<String, Any> ?: emptyMap()
+
+                    for ((key, userMap) in usersMap) {
+                        val userFields = userMap as? Map<String, Any> ?: emptyMap()
+
+                        // Verificar si los campos "codeOfEvent" y "codeOfStaff" coinciden
+                        val codeOfEvent = userFields["codeOfEvent"] as? String
+                        val codeOfStaff = userFields["codeOfStaff"] as? String
+                        val admin = userFields["admin"] as? Boolean
+
+                        if (codeOfEvent == EventId && codeOfStaff == StaffCode) {
+                            Log.d("GGGGGGGGGGGGGGGGGGG", "Usuario encontrado en el mapa $key del documento ${documentSnapshot.id}")
+                            Log.d("GGGGGGGGGGGGGGGGGGG", "el admin es  $admin")
+
+                            return admin
+                        }
+                    }
+                }
+            } else {
+                Log.d("KKKKKKKKKK", "El documento 'Users' no existe")
+            }
+        } catch (e: Exception) {
+            Log.e("KKKKKKKKKK", "Error al obtener el documento 'Users': $e")
+        }
+
+        Log.d("KKKKKKKKKK", "Usuario no encontrado")
+        return false
+    }
+
 }

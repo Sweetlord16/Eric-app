@@ -28,5 +28,14 @@
         <action
             android:id="@+id/action_loginFragment_to_eventInfoFragment"
             app:destination="@id/eventInfoFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+
     </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.t_ket.presentation.UserInfo.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" />
 </navigation>

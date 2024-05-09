@@ -146,6 +146,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHost.navController
 
         binding.bottomNavView.setupWithNavController(navController)
+        binding.bottomNavView2.setupWithNavController(navController)
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -154,6 +155,13 @@ class MainActivity : AppCompatActivity() {
                 with(binding) {
                     Log.d("TAG", "Koi no DIsco QUEEN")
                     bottomNavView.isVisible = true
+                }
+            }
+            if (destination.id == R.id.userInfoFragment) {
+                // Acciones específicas cuando el destino es EventInfoFragment
+                with(binding) {
+                    Log.d("TAG", "Koi no DIsco QUEEN")
+                    bottomNavView2.isVisible = true
                 }
             }
             if (destination.id == R.id.qrWindowFragment) {

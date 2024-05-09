@@ -30,4 +30,7 @@ class UserRepositoryImpl : UserRepository {
     override fun getIdEvent(): String {
         return user?.codeOfEvent ?: ""
     }
+
+    override suspend fun isAdmin(id_event: String, staffCode: String): Boolean? {
+        return userRemote.isAdmin(id_event, staffCode)    }
 }

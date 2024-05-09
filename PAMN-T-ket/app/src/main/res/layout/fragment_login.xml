@@ -8,16 +8,6 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".presentation.login.LoginFragment">
-    <me.ibrahimsn.particle.ParticleView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:particleCount="60"
-        app:particleMinRadius="3"
-        app:particleMaxRadius="10"
-        app:particlesBackgroundColor="@color/background"
-        app:particleColor="@color/primary"
-        app:particleLineColor="@color/primary"
-        app:particleLinesEnabled="true" />
 
     <ImageView
         android:id="@+id/waves"

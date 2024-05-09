@@ -44,10 +44,24 @@ class LoginFragment : Fragment() {
         LoginViewModel.signUpState.observe(viewLifecycleOwner) { state ->
             when(state) {
                 true -> {
-                    with(binding){
-                        TextToVerify.isVisible=true
-                        findNavController().navigate(R.id.action_loginFragment_to_eventInfoFragment)
-                        Log.d("TAG", "He pasado por aqui")
+                    // Si signUpState es true, verificamos signUpAdmin
+                    LoginViewModel.signUpAdmin.observe(viewLifecycleOwner) { admin ->
+                        if(admin) {
+                            // Si ambos signUpState y signUpAdmin son true
+                            with(binding){
+                                TextToVerify.isVisible = true
+                                findNavController().navigate(R.id.action_loginFragment_to_eventInfoFragment)
+                                Log.d("TAG", "eres admin rey")
+                            }
+                        } else {
+                            // Si signUpState es true pero signUpAdmin es false
+                            // Aquí puedes manejar este caso si es necesario
+                            with(binding){
+                                TextToVerify.isVisible = true
+                                findNavController().navigate(R.id.action_loginFragment_to_userInfoFragment)
+                                Log.d("TAG", "No eres admin")
+                            }
+                        }
                     }
                 }
                 false -> {

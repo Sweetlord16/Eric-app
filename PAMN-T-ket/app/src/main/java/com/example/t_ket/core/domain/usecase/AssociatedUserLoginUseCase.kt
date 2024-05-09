@@ -14,4 +14,7 @@ class AssociatedUserLoginUseCase @Inject constructor() : UserUseCaseRepository {
          }
          return userRepository.checkIsStaff(codigo.substring(0,3),codigo.substring(4,7))
     }
+
+    override suspend fun isAdmin(codigo: String): Boolean? {
+        return userRepository.isAdmin(codigo.substring(0,3),codigo.substring(4,7))  }
 }
